@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns=[
     path("",views.home,name="Home")  ,
-    path ("nextpage/",views.nextpage ,name="Nextpage")
+    path ("room/<int:id>/",views.room ,name="Room")
 ]
