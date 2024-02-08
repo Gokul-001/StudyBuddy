@@ -12,7 +12,7 @@ class Room(models.Model):
 
     roomId=models.IntegerField(null=False) 
     name=models.CharField(max_length=200)
-    #topic = models.ForeignKey('Topic',on_delete=models.SET_NULL,null=True)
+    topic = models.ForeignKey('Topic',on_delete=models.SET_NULL,null=True)
     description=models.TextField(null=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -28,7 +28,7 @@ class Message(models.Model):
     created=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Room body preview : {self.body[:50]}"
+        return f"Room message preview : {self.body[:50]}"
     
 class Topic(models.Model):
     topic =models.CharField(max_length=200)
