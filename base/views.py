@@ -9,6 +9,5 @@ def home(request):
     return render(request,'base/home.html',context)
 def room(request,id):
     room=Room.objects.get(id=id)
-    
     context = { 'room':room}
     return render(request,'base/room.html',context)

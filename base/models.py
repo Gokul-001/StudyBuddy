@@ -12,6 +12,7 @@ class Room(models.Model):
 
     roomId=models.IntegerField(null=False) 
     name=models.CharField(max_length=200)
+    host=models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     topic = models.ForeignKey('Topic',on_delete=models.SET_NULL,null=True)
     description=models.TextField(null=True)
     updated = models.DateTimeField(auto_now=True)
